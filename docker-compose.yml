@@ -1,0 +1,69 @@
+
+
+services:
+  # Servicio de la aplicación PHP
+  app:
+    build:
+      args:
+        user: laravel
+        uid: 1000
+      context: ./docker/php
+      dockerfile: Dockerfile
+    image: fimi-app
+    container_name: fimi-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    environment:
+      - PHP_MEMORY_LIMIT=512M
+      - PHP_MAX_EXECUTION_TIME=600
+    networks:
+      - fimi
+
+  # Servicio Nginx
+  nginx:
+    image: nginx:alpine
+    container_name: fimi-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d/
+    depends_on:
+      - app
+    networks:
+      - fimi
+
+  # Servicio MySQL
+  db:
+    image: mysql:8.0
+    container_name: fimi-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: fimi
+      MYSQL_ROOT_PASSWORD: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - fimi
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  fimi:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local 
