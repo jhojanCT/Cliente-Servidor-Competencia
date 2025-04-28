@@ -1,66 +1,239 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📘 Documentación Técnica del Sistema ERP
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📌 Descripción General
 
-## About Laravel
+El presente sistema ERP ha sido desarrollado con el objetivo de brindar una solución integral para la gestión empresarial. Utilizando tecnologías modernas y prácticas recomendadas de la industria, el sistema ofrece una plataforma robusta, escalable y fácilmente desplegable. Gracias al uso de contenedores Docker, se asegura una instalación sencilla y un entorno de ejecución estandarizado, minimizando problemas de configuración.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este sistema fue diseñado bajo los principios de modularidad, escalabilidad y portabilidad, permitiendo su despliegue en ambientes de desarrollo, pruebas o producción con mínimos ajustes.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Tecnologías Utilizadas
 
-## Learning Laravel
+- 🐘 **PHP 8.3 NTS**  
+  PHP es el lenguaje principal utilizado para el desarrollo del backend. Se ha utilizado la versión 8.3 NTS (Non Thread Safe) para optimizar el rendimiento en servidores donde PHP se ejecuta como un módulo separado.  
+  ➡️ [Descargar PHP](https://www.php.net/downloads.php)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 🎯 **Laravel**  
+  Framework de PHP utilizado para estructurar el proyecto. Laravel proporciona una arquitectura limpia basada en MVC (Modelo-Vista-Controlador), herramientas de seguridad avanzadas, gestión de rutas, migraciones de base de datos, autenticación, colas, eventos y mucho más.  
+  ➡️ [Documentación de Laravel](https://laravel.com/docs)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- 🐬 **MySQL**  
+  Sistema de gestión de bases de datos relacional utilizado para almacenar, consultar y gestionar información crítica de manera eficiente y segura.  
+  ➡️ [Descargar MySQL](https://dev.mysql.com/downloads/)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 🐳 **Docker**  
+  Herramienta de contenedores utilizada para empaquetar la aplicación junto a todas sus dependencias en un entorno estandarizado.  
+  ➡️ [Descargar Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-## Laravel Sponsors
+- 🎨 **Bootstrap**  
+  Framework de CSS utilizado para diseñar la interfaz gráfica responsiva de la aplicación, asegurando compatibilidad con distintos dispositivos.  
+  ➡️ [Documentación Bootstrap](https://getbootstrap.com/)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠️ Requisitos Previos para la Instalación
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Antes de desplegar el sistema, asegúrate de tener instalados los siguientes programas en tu computadora:
 
-## Contributing
+| Herramienta | Propósito | Enlace de descarga |
+|:------------|:----------|:-------------------|
+| **Docker Desktop** | Gestión de contenedores de servicios | [Docker Desktop](https://www.docker.com/products/docker-desktop) |
+| **Git** | Clonado de repositorios | [Git Downloads](https://git-scm.com/) |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## ⚙️ Procedimiento de Instalación y Despliegue
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1️⃣ Clonar el Repositorio
+Desde tu terminal o línea de comandos, debes clonar el proyecto desde el repositorio remoto:
 
-## Security Vulnerabilities
+```bash
+git clone [URL_DEL_REPOSITORIO]
+cd nombre_del_proyecto
+```
+Esto descargará todos los archivos del proyecto en tu máquina local.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+### 2️⃣ Crear el archivo `.env`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Crear el archivo `.env` en la raíz del proyecto y configurar las variables de entorno:
+
+```env
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:LeubkOILzMjKnCuKhY4U/dCfYoUf6fFTf/hMVxexzsU=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+APP_LOCALE=en
+APP_FALLBACK_LOCALE=en
+APP_FAKER_LOCALE=en_US
+
+APP_MAINTENANCE_DRIVER=file
+# APP_MAINTENANCE_STORE=database
+
+PHP_CLI_SERVER_WORKERS=4
+
+BCRYPT_ROUNDS=12
+
+LOG_CHANNEL=stack
+LOG_STACK=single
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=fimi
+DB_USERNAME=root
+DB_PASSWORD=root
+
+SESSION_DRIVER=database
+SESSION_LIFETIME=120
+SESSION_ENCRYPT=false
+SESSION_PATH=/
+SESSION_DOMAIN=null
+
+BROADCAST_CONNECTION=log
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=database
+
+CACHE_STORE=database
+# CACHE_PREFIX=
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_CLIENT=phpredis
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=log
+MAIL_SCHEME=null
+MAIL_HOST=127.0.0.1
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+VITE_APP_NAME="${APP_NAME}"
+```
+
+---
+
+### 3️⃣ Construir los Contenedores Docker
+
+Se debe construir la infraestructura de servicios (PHP, MySQL, etc.) utilizando Docker Compose:
+```bash
+docker-compose build
+```
+Este comando genera las imágenes necesarias según las instrucciones del archivo docker-compose.yml.
+
+![docker-compose build](images/dockercomposebuild.png)
+
+---
+
+### 4️⃣ Levantar los Servicios
+
+Una vez construidos los contenedores, se deben levantar todos los servicios en segundo plano:
+```bash
+docker-compose up -d
+```
+Esto inicia los servicios y permite que la aplicación comience a ejecutarse en el entorno Docker.
+
+![docker-compose up -d](images/dockercomposeup.png)
+
+---
+
+### 5️⃣ Instalar las Dependencias de Laravel
+
+Dentro del contenedor de la aplicación, se deben instalar todas las dependencias necesarias (framework Laravel y paquetes auxiliares):
+```bash
+docker-compose exec app composer install
+```
+Este comando ejecuta composer install dentro del contenedor app.
+
+![docker-compose exec app composer install](images/dockercomposeexecappphpartisanmigrate.png)
+
+---
+
+### 6️⃣ Generar la Clave de la Aplicación
+
+Se debe generar una clave única para que Laravel pueda funcionar de manera segura:
+```bash
+docker-compose exec app php artisan key:generate
+```
+Esta clave cifra las sesiones, cookies y otros datos sensibles.
+
+---
+
+### 7️⃣ Migrar la Base de Datos
+
+Para construir las tablas y estructuras necesarias en la base de datos, se deben ejecutar las migraciones de Laravel:
+```bash
+docker-compose exec app php artisan migrate
+```
+Esto creará automáticamente todas las tablas definidas en los archivos de migración.
+
+![docker-compose exec app php artisan migrate](images/dockercomposeexecappphpartisanmigrate.png)
+
+---
+
+### 8️⃣ Poblar la Base de Datos
+
+Luego, si el sistema dispone de datos iniciales o registros de prueba, se deben cargar usando los seeders:
+```bash
+docker-compose exec app php artisan migrate --seed
+```
+Esto garantiza que al iniciar el sistema se disponga de la información básica para su correcto funcionamiento.
+
+![docker-compose exec app php artisan migrate --seed](images/dockercomposeexecappphpartisanmigrateseed.png)
+
+---
+
+### 9️⃣ Acceder al Sistema
+
+Finalmente, se puede acceder al sistema ingresando la siguiente dirección en el navegador:
+
+```text
+http://localhost:8000
+```
+Desde allí, la aplicación estará lista para ser utilizada.
+
+![inicio](images/inicio.png)
+
+---
+
+## 📈 Configuración de la Base de Datos
+
+| Parámetro | Valor |
+|:----------|:------|
+| Nombre de la Base de Datos | `fimi` |
+| Usuario de Base de Datos | `root` |
+| Contraseña de Base de Datos | `root` |
+| Host de la Base de Datos | `db` |
+| Puerto de Base de Datos | `3306` |
+
+---
+
+## 📄 Consideraciones Adicionales
+
+- **Docker Compose** facilita el levantamiento automático de múltiples servicios relacionados.
+- **Laravel** permite una extensión sencilla mediante paquetes y configuraciones modulares.
+- **Despliegue Local** optimizado para pruebas y desarrollo (`APP_ENV=local`).
+- **Escalabilidad**: el sistema puede crecer modularmente gracias al uso de contenedores.
+- **Seguridad**: se recomienda actualizar llaves de entorno y habilitar HTTPS para producción.
+
+---
+
+# ✅ Sistema ERP listo para su ejecución y expansión 🎉🚀
+
